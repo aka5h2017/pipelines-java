@@ -12,14 +12,14 @@ variables:
   azureSubscription: '527e08a3-c30a-4b24-a016-75ecd56bd64a'
   
   # Web app name
-  webAppName: ''
+  webAppName: 'myWebApp'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
 
 stages:
 - stage: Build
-  displayName: Build stage
+  displayName: Build stage $(secret)
   jobs:
   - job: MavenPackageAndPublishArtifacts
     displayName: Maven Package and Publish Artifacts
